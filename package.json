@@ -1,0 +1,22 @@
+{
+  "name": "mwa-2018-december",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PurevdorjBatgerel/MWA2018Nov.git"
+  },
+  "author": "Purevdorj Batgerel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PurevdorjBatgerel/MWA2018Nov/issues"
+  },
+  "homepage": "https://github.com/PurevdorjBatgerel/MWA2018Nov#readme",
+  "dependencies": {
+    "rxjs": "^6.3.3"
+  }
+}
