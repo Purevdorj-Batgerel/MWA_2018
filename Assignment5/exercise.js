@@ -14,9 +14,9 @@ app.get('/user', (req, res) => {
             res.set({
                 'Cache-control': 'private, max-age=86400',
                 'Last-Modified': new Date(),
-                'Link': `<https://randomuser.me/api/?page=1&results=10>; rel="first",
-                <https://randomuser.me/api/?page=${response.data.info.page + 1}&results=10&seed=${response.data.info.seed}>; rel="next",
-                <https://randomuser.me/api/?page=${response.data.info.page - 1}&results=10&seed=${response.data.info.seed}>; rel="prev"`
+                'Link': `<https://randomuser.me/api/?page=1&results=10>; rel="first",` +
+                    `<https://randomuser.me/api/?page=${response.data.info.page + 1}&results=10&seed=${response.data.info.seed}>; rel="next",` +
+                    `<https://randomuser.me/api/?page=${response.data.info.page - 1}&results=10&seed=${response.data.info.seed}>; rel="prev"`
             });
             console.log(response.data);
             res.json(response.data);
