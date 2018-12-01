@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/PurevdorjBatgerel/MWA2018Nov#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
     "rxjs": "^6.3.3"
   }
 }
