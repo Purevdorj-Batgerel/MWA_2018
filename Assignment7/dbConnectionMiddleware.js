@@ -14,10 +14,14 @@ module.exports = function () {
 
                 db = client.db('mwa');
                 req.db = db;
+
+                console.log(`Creating DB connection for the first time`);
                 next();
             });
         } else {
             req.db = db;
+
+            console.log(`Using same connection again`);
             next();
         }
     }
