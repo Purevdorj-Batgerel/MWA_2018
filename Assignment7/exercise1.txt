@@ -1,0 +1,17 @@
+Book Schema
+{
+    ISBN: String,
+    author: String,
+    tags: Array of string,
+    borrowedEntries: [
+        {
+            student: {
+                studentId: String,
+                name: String
+            },
+            returnDate: Date
+        }
+    ]
+}
+
+Few-to-few relation
