@@ -44,17 +44,22 @@ router.post('/', [
     }
 
     grades.addGrade({
-        id: req.body.id,
-        name: req.body.name,
-        course: req.body.course,
-        grade: req.body.grade
-    }).then(result => res.status(200).json({
-        result
-    }));
+            id: req.body.id,
+            name: req.body.name,
+            course: req.body.course,
+            grade: req.body.grade
+        })
+        .then(result => res.status(200).json({
+            result
+        }));
 });
 
 router.put('/:id', [
-    body("id").isNumeric(),
+    body("id", "id field must be numeric and should match request param")
+    .isNumeric()
+    .custom((value, {
+        req
+    }) => value == req.params.id),
     body("name").exists(),
     body("course").exists(),
     body("grade").isNumeric()
@@ -68,13 +73,20 @@ router.put('/:id', [
     }
 
     grades.updateGrade({
-        id: req.body.id,
-        name: req.body.name,
-        course: req.body.course,
-        grade: req.body.grade
-    }).then(result => res.status(200).json({
-        result
-    }));
+            id: req.body.id,
+            name: req.body.name,
+            course: req.body.course,
+            grade: req.body.grade
+        })
+        .then(result => res.status(200).json({
+            result
+        }))
+        .catch(err => {
+            console.error(err);
+            res.status(404).json({
+                err
+            })
+        });
 });
 
 router.delete('/:id', (req, res) => {

@@ -55,7 +55,7 @@ class Grades {
 
     updateGrade(newGrade) {
         return new Promise((resolve, reject) => {
-            for (const i = 0; i < this.grades.length; i++) {
+            for (let i = 0; i < this.grades.length; i++) {
                 if (this.grades[i].id == newGrade.id) {
                     this.grades[i] = newGrade;
                     // return resolve(newGrade);
